@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaQuery</title>
+    <!-- HTML과 CSS의 2번째 상호작용방법 -->
+    <style>
+        /* 화면에 크기에따라서 화면에 보이기도하고 안보이기도하게되면 
+            => 화면에 크기에 따라서 디자인을 다르게 했다고 말할 수 있다. */
+        div {
+            border: 10px solid green;
+            font-size: 30px;
+        }
+
+        /* screen width > 800px : 화면 크기가 800보다 크다면 디스플레이 논*/
+        /* @media(min-width:800px) {
+            div {
+                display: none;
+            }
+        } */
+
+        /* screen width < 800px : 화면크기가 800보다 작으면 디스플레이 논 */
+        @media(max-width:200px) {
+            div{
+                display:none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+        <h2>반응형 웹 디자인(Responsive)</h2>
+        화면의 크기에 따라서 웹 페이지의 각 요소들이 반응해서 동작하게 된다.<br>
+        반응형 디자인을 css의 미디어쿼리를 사용하여 제작<br>
+        미디어쿼리를 활용하여 화면의 크기 스마트폰의 가로, 세로모드등 <br>
+        화면의 특성에 따라서 반응하도록 해주는 미디어 쿼리를 사용한다.
+        </p>
+    </div>
+
+</body>
+
+</html>

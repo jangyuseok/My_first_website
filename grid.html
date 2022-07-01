@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+</head>
+<!-- HTML과 CSS의 2번째 상호작용방법 -->
+<style>
+    #grid {
+        border: 5px solid blueviolet;
+        display: grid;
+        /* 블록 엘리먼트, 인라인 엘리먼트 등 표시되는 방법을 바꿔주는 속성 */
+        /* grid-template-columns: 150px 1fr; => 첮번째 컬럼은 150의 고정, 두번째 컬럼은 화면에서 1프레임을 가짐 */
+        /* grid의 장점은 한 태그의 글 길이가 길어지면 짧은 글의 박스도 비율에 맞게 같이 커진다 */
+        /* www.caniuso.com css의 통계사이트 */
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    div {
+        border: 5px solid gray;
+    }
+</style>
+
+<body>
+    <div id="grid">
+        <div>Navigation</div>
+        <!-- grid의 장점은 한 태그의 글 길이가 길어지면 짧은 글의 박스도 비율에 맞게 같이 커진다 -->
+        <div>내비게이션(navigation)은 배, 항공기, 우주선 등을 위한 항법이나 그 이론을 말한다.
+            내비게이션은 다음을 가리키는 말이다.
+            항법
+            영어권 국가에서는 일반적으로 해상 운송과 동의어이다.
+            웹 브라우징
+            차량자동항법장치 대신에 자주 부르는 말이다.
+            내비게이션 (영화)
+        </div>
+    </div>
+    <!-- 네비게이션과 아티클이라는 정보를 각각 어떤 태그로 묶어 주려면 
+    무색 무취의 태그인 <div></div>(block level element)를 사용한다 /
+    div 2개의 요소를 나란히 놓기 위해 grid태그를 사용한다 
+    그렇기 위해선 2개의 div태그를 감싸는 부모 태그가 필요하다-->
+    <span>Navigation</span>
+    <span>Article</span>
+    <!-- <span></span>태그는 div태그와 달리 (inline level element) -->
+</body>
+
+</html>

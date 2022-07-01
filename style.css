@@ -1,0 +1,66 @@
+/* 다른 웹 페이지에서 모두 같이 적용되는 스타일 태그의 중복을 줄여주기위해
+html파일에 link태그를 통해 css파일에 스타일 태그를 제외한 css코드만을 작성 */
+
+/* a {
+    color: blue;
+    text-decoration: none;
+} */
+
+/* 태그(가장 후순위 선택자) */
+
+/* HTML과 CSS의 3번째 상호작용방법 */
+
+/* a {
+    color: black;
+} */
+/* #button1, #button2 {
+    text-align: center;
+} */
+
+h1 {
+    font-size: 45px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    margin: 0;
+    padding: 30px;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: 150px 2fr;
+
+}
+
+/* grid의 자식인 ol에만 적용 */
+#grid ol {
+    border-right: 1px solid gray;
+    width: 100px;
+    margin: 0px;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+/* 검사를 통해 페이지의 마진, 패딩등을 줄일 수 있다 */
+body {
+    margin: 0px;
+}
+
+#grid #Text {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media(max-width:770px) {
+    #grid{
+        display: block;
+    }
+    #grid ol {
+    border-right: none;
+    }
+}
+
+#summary {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid gray;
+}

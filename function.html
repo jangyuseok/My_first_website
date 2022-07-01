@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <strong>1, 2, 3.html의 인풋 태그가 1억개가 필요하다? <br>
+        => 코드를 줄여주는 함수를 이용하면된다. / 1억개의 코드가 있을때 정말 모두 같은 코드인지 확인 불가<br>
+        결론 : 함수는 코드가 많아지면 정리정돈하는 도구
+    </strong>
+    <h2>function</h2>
+    함수는 입력과 출력으로 정의 할 수 있다
+    <!-- 인 풋 태그가 1억 개가 있을때 스타일 속성인 컬러의 변경이 필요할때 1억개 모두 바꿔 줄 수 없으니 함수 이용 -->
+    <h3>Basic</h3>
+    head태그에 script코드를 넣어준 후 body태그에 함수를 적용 다음으로 head태그에서의 코드 변경으로<br>
+    body태그 전체에 적용되어 있는 함수태그 전체의 코드를 변경할 수 있다.<br>
+    반복적으로 숫자가 늘면 반복문을 쓸 수도 있지만 그렇지 못한경우 함수를 써서 해결이 가능하다.<br>
+    <ul>
+        <script>
+            // 웹 브라우저는 function을 보고 중괄호안에 코드를 만들려는거구나 인식하고 기억하다가
+            // 함수명에 괄호가 닫히는걸 보고 함수에 맞는 코드를 실행시켜준다
+            // 수납상자안에 코드를 넣어놓고 함수명으로 불러와 적용시키는 것
+            function two() {
+                document.write('<li>2-1</li>');
+                document.write('<li>2-2</li>');
+            }
+            document.write('<li>1</li>');
+            two();
+            document.write('<li>3</li>');
+            two();
+        </script>
+    </ul>
+    <strong>자판기가 있을때 우리는 원하는 메뉴를 입력하고 자판기는 출력해준다 => 수학적인 개념에 함수</strong>
+
+    <h3>Parameter & Argument</h3>
+    <script>
+        function onePlusOne() {
+            document.write(1 + 1 + '<br>');
+        }
+        onePlusOne();
+        //원플러스원 함수를 생성한 후에 함수명쓰고 괄호만 쓰면 호출이된다.
+
+        function sum(left, right) {
+            document.write(left + right + '<br>');
+        }
+        sum(2, 3);
+        sum(3, 4);
+        // 여기에서 함수로 전달해주는 2, 3이라는 값을 인자 & Argument라 부르고
+        // 이 값을 받아서 함수안르로 매개해주는 ex)left, right 변수들을 매개변수 & Parameter라 한다.
+        // sum에 순서대로 왼쪽 오른쪽 숫자가 입력되고 함수에 있는 left + right 과정을 거쳐 그 결과 후에는 줄바꿈이 되어서 화면에 출력된다
+    </script>
+
+    <h3>Return</h3>
+    ex) 1 + 1 = 2은 숫자 2의 표현식, 2 - 1 = 1은 숫자 1의 표현식이라 한다.<br>
+    그렇다면 sum의 결과가 5라고 표현되는 표현식을 만들고 싶다면 Return을 알아야한다 / 저렇게 출력된 문자를 다양한 방법으로 리턴을 사용하여 활용이 가능<br>
+    <strong>일일히 우리가 도큐먼트라는 실행 결과에 속성을 입력해주지않아도 어떠한 과정의 결과를 이 함수에 속성을 적용하여 돌려주어라라고 시킬 수 있다.<br><br></strong>
+    <script>
+        function sum2(left, right){
+            //매개 변수에 저장되어있는 인자를 계산이라는 기능을 사용할 수 있게 return을 사용
+            return left + right;
+        }
+        document.write(sum2(2, 3) + '<br>');
+        document.write('<div style="color : red">' + sum2(2, 3) + '</div>');
+        document.write('<div style="font-size:3rem;">' + sum2(2, 3) + '</div>');
+    </script>
+</body>
+
+</html>

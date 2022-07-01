@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문과 배열</title>
+</head>
+
+<body>
+    ex) 야간 모드로 했을때 링크의 색깔을 바꾸어주고 싶은데 링크가 1억개 일때 코드를 줄이기위해 반복문을 쓴다.<br>
+    배열을 반복적으로 작업하기위해 반복문을 배울것
+    <br>
+    ex2) 살림이 늘어날수록 수납공간이 필요하다. = 프로그래밍도 마찬가지 데이터가 많이질수록 연관된 데이터를 정리하여주는것
+
+    <h2>Array</h2>
+    <h3>Syntax</h3>
+    <script>
+        //배열은 대괄호로 시작해서 대괄호로 끝난다. 값과 값사이는 콤마로 구분
+        let coworkers = ["JJangyu", "Seok"];
+    </script>
+
+    <h3>Get</h3>
+    <script>
+        document.writeln(coworkers[0]);
+        document.writeln(coworkers[1]);
+    </script>
+
+    <h3>add</h3>
+    <script>
+        coworkers.push('choi');
+        coworkers.push('2soo');
+    </script>
+
+    <h3>Count</h3>
+    <!-- 배열에 몇개의 값이 있는지 알아보는 방법 (javascript Array count) -->
+    <script>
+        document.write(coworkers.length);
+    </script>
+    <!-- 등등 여러가지의 JS의 배열 작업이 있는데 JavaScriptArray의 검색을 통해 모질라 웹의 사용법 참조 -->
+
+    <h2>Loop</h2>
+    <!-- 1억개의 반복된 코드를 만들기위해 반복문을 쓰면 편하다 -->
+    <ul>
+        <script>
+            document.write('<li>1</li>');
+            let i = 0;
+            while (i < 3) {
+                document.write('<li>2</li>');
+                document.write('<li>3</li>');
+                i = i + 1;
+                // i=0인데 i가 3이 될때까지 루프를 한번돌면 1씩 더해주어라
+            }
+            document.write('<li>4</li>');
+        </script>
+    </ul>
+
+    <h2>Loop & Array</h2>
+    <h3>Co_Workers</h3>
+    <!-- 
+    <ul>
+        <li>JJangyu</li>
+        <li>BBo</li>
+        <li>2soo</li>
+        <li>Seok</li>
+    </ul> 
+    순차적인 데이터를 담는것이 배열이고 그것을 꺼내줄 수 있는것이 반복문이다.
+    -->
+    <script>
+        let co_workers = ['JJangyu', 'BBo', '2soo', 'Seok'];
+        // 데이터가 추가되면 숫자를 늘려주면되고 데이터값과 숫자가 맞지 않으면 
+        // undefined이 뜬다 => 일일히 숫자를 바꿔주기 보단 조건식에 변수명을 입력해주면 자동 동기화된다.
+    </script>
+
+    <ul>
+        <script>
+            let j = 0;
+            while (j < co_workers) {
+                document.write('<li>'+co_workers[j]+'</li>');
+                // document.write('<li><a href="http://~.com/'+co_workers[j]+'">'+co_workers[j]+'</a></li>');
+                // 등과 같이 각자의 링크 넣어주는것처럼 응용이 가능하다
+                j = j + 1; 
+            }
+        </script>
+    </ul>
+
+</body>
+
+</html>

@@ -1,34 +1,216 @@
-<!doctype html><!--html구조를 알려주는 태그-->
+<!doctype html>
+<!--html구조를 알려주는 태그-->
 <html>
 
 <head>
 	<!-- 
 		SEO등과 같이 책의 표지같은 부분 
 	-->
-	<title>WEB1 - JavaScript</title>
-	
+	<title>WEB2 - JavaScript</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="Organizing.js"></script>
 </head>
 
 <body>
+	<!-- 클릭에 대한 이벤트를 만들어주고 그 안에 JS코드를 입력해주면된다. 
+	body 태그이든 id값이든 querySelector라는 CSS선택자로 선택하여 꾸며 줄 수 있다.-->
+	<!-- <input type="button" value="DarkMode" onclick="
+		document.querySelector('body').style.backgroundColor = 'black';
+		document.querySelector('body').style.color = 'white';
+	">
+	
+	<input type="button" value="day" onclick="
+		document.querySelector('body').style.backgroundColor = 'white';
+		document.querySelector('body').style.color = 'black';
+	"> -->
+
+	<!-- 생활코딩 WEB2 - JavaScript17 => 5 : 22 ~ 
+		javascript element get value
+		this는 이 코드내에서만 조건문이 발동할 수 있게 해준다 또한 코딩을 잘하려면 중복을 제거해야한다
+	-->
+
+	<!-- <input id="toggle" type="button" value="DarkMode" onclick="
+		//변수로 선언함으로써 코드의 양을 줄임
+		let target = document.querySelector('body');
+		// if(document.querySelector('#toggle').value === 'DarkMode'){
+		if(this.value === 'DarkMode'){
+		target.style.backgroundColor = 'black';
+		target.style.color = 'white';
+		// document.querySelector('#toggle').value = 'day';
+		this.value = 'day';
+
+		let alist = document.querySelectorAll('a');
+		let i = 0;
+		while(i < alist.length){
+			alist[i].style.color = 'powderblue';
+			i = i + 1;
+		}
+		// 토글을 클릭하면 day의 문자열이 대입연산자를 통해 day로 바뀐다
+		} else {
+		target.style.backgroundColor = 'white';
+		target.style.color = 'black';
+		// document.querySelector('#toggle').value = 'DarkMode';
+		this.value = 'DarkMode';
+		// this는 이 코드내에서만 조건문이 발동할 수 있게 해준다
+
+		let alist = document.querySelectorAll('a');
+		let i = 0;
+		while(i < alist.length){
+			alist[i].style.color = 'blue';
+			i = i + 1;
+		}
+		}
+	"> -->
+	<input id="toggle" type="button" value="DarkMode" onclick="
+		toggleController(this);
+	">
+
 	<h1><a href="index.html">WEB</a></h1>
-	<ol>
-		<li><a href="1.html">HTML </a></li>
-		<li><a href="2.html">CSS </a></li>
-		<li><a href="3.html">JavaScript </a></li>
-	</ol>
-	<h2>JavaScript란 무엇인가?</h2>
-	<p style="margin-top : 30px;">
-		자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.<br>
-		이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. <br>
-		또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.<br>
-		자바스크립트는 본래 넷스케이프 커뮤니케이션즈 코퍼레이션의 브렌던 아이크(Brendan Eich)가 처음에는 모카(Mocha)라는 이름으로,<br>
-		나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다.<br>
-		자바스크립트가 썬 마이크로시스템즈의 자바와 구문이 유사한 점도 있지만, 이는 사실 두 언어 모두 C 언어의 기본 구문에 바탕을 뒀기 때문이고,<br>
-		자바와 자바스크립트는 직접적인 연관성은 약하다.<br>
-		이름과 구문 외에는 자바보다 셀프나 스킴과 유사성이 많다.<br>
-		자바스크립트는 ECMA스크립트(ECMAScript)의 표준 사양을 가장 잘 구현한 언어로 인정받고 있으며 ECMAScript 5(ES5)까지는 대부분의 브라우저에서 기본적으로 지원되었으나<br>
-		ECMAScript 6 이후부터는 브라우저 호환성을 위해 트랜스파일러로 컴파일된다.
-	</p>
+	<div id="grid">
+			<ol>
+				<li><a href="1.html">HTML </a></li>
+				<li><a href="2.html">CSS </a></li>
+				<li><a href="3.html">JavaScript </a></li>
+				<li><a href="4.html">Library & Framework</a></li>
+				<li><a href="5.html">UI & API</a></li>
+			</ol>
+		<div id="Text">
+			<h2>JavaScript란 무엇인가?</h2>
+			<p id="summary">
+				자바스크립트(영어: JavaScript)는 객체 기반의 스크립트 프로그래밍 언어이다.<br>
+				이 언어는 웹 브라우저 내에서 주로 사용하며, 다른 응용 프로그램의 내장 객체에도 접근할 수 있는 기능을 가지고 있다. <br>
+				또한 Node.js와 같은 런타임 환경과 같이 서버 프로그래밍에도 사용되고 있다.<br>
+				자바스크립트는 본래 넷스케이프 커뮤니케이션즈 코퍼레이션의 브렌던 아이크(Brendan Eich)가 처음에는 모카(Mocha)라는 이름으로,<br>
+				나중에는 라이브스크립트(LiveScript)라는 이름으로 개발하였으며, 최종적으로 자바스크립트가 되었다.<br>
+				자바스크립트가 썬 마이크로시스템즈의 자바와 구문이 유사한 점도 있지만, 이는 사실 두 언어 모두 C 언어의 기본 구문에 바탕을 뒀기 때문이고,<br>
+				자바와 자바스크립트는 직접적인 연관성은 약하다.<br>
+				이름과 구문 외에는 자바보다 셀프나 스킴과 유사성이 많다.<br>
+				자바스크립트는 ECMA스크립트(ECMAScript)의 표준 사양을 가장 잘 구현한 언어로 인정받고 있으며 ECMAScript 5(ES5)까지는 대부분의 브라우저에서 기본적으로
+				지원되었으나<br>
+				ECMAScript 6 이후부터는 브라우저 호환성을 위해 트랜스파일러로 컴파일된다.
+			</p>
+
+			<p>
+				사람들은 웹 페이지도 게임처럼 동적으로 상호작용하기를 원함 => JavaScript의 탄생
+				HTML로 웹을 만들어 JavaScript를 적용 ex)사용자와 상호작용하면서도 검색 엔진의 활용
+				HTML 정보 / JS는 영화처럼 움직이게 한다.
+				검사에서 엘리먼트 = 태그를 의미한다.
+				인풋 태그의 속성으로 type = "XX" / value(무엇을 입력할 것 인지) = "XX				
+				1. JS는 사용자와 상호작용하는 언어이다.
+				2. 웹 브라우저는 한번 화면에 출력되면 자기 자신을 바꿀수 없다.
+				3. JS를 이용해 버튼등을 추가해서 버튼을 누르면 바디 태그에 스타일이라는 속성을 추가하면서 디자인을 바꿔준다.
+				=> JS가 HTML을 제어하는 언어이다.(이러한 특성이 웹 페이지를 동적으로 작동시킨다.				
+				기본적으로JS는 HTML위에 있는 언어이므로 HTML에 JS를 넣는 방법은 웹 브라우저에 script태그를 넣어 주어야함
+				JS와 HTML의 차이점이 무엇이냐 ex)HTML에 "1+1"을 작성했을때 계산기와 같은 기능을 사용할 수 없으나 JS는 가				
+				HTML, JS 모두 컴퓨터 언어라 하지만 JS는컴퓨터 언어이면서 컴퓨터 프로그래밍 언어라고도 불리고
+				HTML은 프로그래밍 언어라고는 불리지 않는다.
+				프로그램(순서) => 프로그램을 만드는과정 : 프로그래밍
+				프로그래밍 언어란?시간의 순서의 따라서 실행되어야할 기능을 프로그램 언어에 맞게 글로 적어두는방식 컴퓨터에 내밀면서
+				컴퓨터가 실행하는 것
+				JS는 시간의 순서, 조건에 따라서 웹 브라우저의 여러 기능이 실행되는 프로그래밍 형태를 띄고 있다.
+			</p>
+
+			<p>
+				사람들은 웹 페이지도 게임처럼 동적으로 상호작용하기를 원함 => JavaScript의 탄생<br>
+				HTML로 웹을 만들어 JavaScript를 적용 ex)사용자와 상호작용하면서도 검색 엔진의 활용<br>
+				HTML 정보 / JS는 영화처럼 움직이게 한다.<br>
+				검사에서 엘리먼트 = 태그를 의미한다.<br>
+				인풋 태그의 속성으로 type = "XX" / value(무엇을 입력할 것 인지) = "XX"<br>
+				<br>
+				1. JS는 사용자와 상호작용하는 언어이다.<br>
+				2. 웹 브라우저는 한번 화면에 출력되면 자기 자신을 바꿀수 없다.<br>
+				3. JS를 이용해 버튼등을 추가해서 버튼을 누르면 바디 태그에 스타일이라는 속성을 추가하면서 디자인을 바꿔준다.<br>
+				=> JS가 HTML을 제어하는 언어이다.(이러한 특성이 웹 페이지를 동적으로 작동시킨다.)<br>
+				<br>
+				기본적으로JS는 HTML위에 있는 언어이므로 HTML에 JS를 넣는 방법은 웹 브라우저에<br>
+				JS와 HTML의 차이점이 무엇이냐 <br>
+				ex)HTML에 "1+1"을 작성했을때 계산기와 같은 기능을 사용할 수 없는 1+1이 그대로 표시되는 정적인 언어 /<br>
+				JS는 html파일에 script태그를 넣어 주는 등 계산기등과 같은 기능을 사용하는 동적인 언어<br>
+			</p>
+
+			<p>
+				<!-- 1. JS와 HTML 상호작용 1번째 방법 -->
+			<h3>JavaScript</h3>
+			<script>
+				document.write(1 + 1 + "  자바 스크립트로 화면에 무엇을 표현하기 위해선 document.write();를 쓴다.");
+			</script>
+			<h3>HTML</h3>
+			1+1 html은 정적인 언어라 JS와 같이 계산기의 기능은 쓸 수 없다.
+			</p>
+
+			<p>
+			<h2>2-1. JS와 HTML 상호작용 2번째 방법(event)</h2>
+			<input type="button" value="hi" onclick="alert('hi')">
+			<input type="text" onchange="alert('changed')">
+			<input type="text" onkeydown="alert('key down!')">
+			<!-- 1. onclick속성에는 속성 값으로는 반드시 JS언어가 와야한다
+					2. onclick속성에 저장되어있는 JS언어로 적힌 문법대로 웹 브라우저가 동작한다
+					3. 이렇게 웹 브라우저 안에서 일어나는 event(사건)라 한다
+					=> 사용자가 어떤 키를 눌렀을때 event를 발생하고 싶다 = javascript keydown event attribute
+				-->
+			</p>
+
+			<p>
+			<h2>2-2. JS와 HTML 상호작용 2번째 방법(Console)</h2>
+			파일을 만들지않고도 JS를 통해 바로 데이터를 처리 할 수 있다.<br>
+			ex)문자열에 문자가 몇개인지 콘솔창을 띄워 alert(''.length)해결 가능, <br>
+			생활코딩 페이스북 당첨자 코드(검사에서 esc로 Console띄울 수 있음)등<br>
+			=> 웹 사이트를 만들 수도 있지만, 나의 필요에 따라 만들어져있는 웹사이트에서 문제 해결이 가능하다<br>
+			</p>
+
+			<p>
+			<h2><a href="Datatypes.html">3-1. JS의 데이터타입</a></h2>
+			</p>
+
+			<p>
+			<h2><a href="Variables.html">3-2. 변수와 대입연산자</a></h2>
+			</p>
+
+			<p>
+			<h2><a href="Conditional.html">3-3. JS의 Boolean과조건문</a></h2>
+			</p>
+
+			<p>
+			<h2><a href="Loop.html">3-4. JS의 반복문과 배열</a></h2>
+			</p>
+
+			<p>
+			<h2><a href="function.html">4. 함수</a></h2>
+			코드가 많아지면 잘 정리할 수 있는 정리도구 => 입력과 출력으로 정의 할 수 있다.
+			</p>
+
+			<p>
+			<h2><a href="Object.html">5. 객체</a></h2>
+			함수라는 것 위에서 객체가 존재하고 함수의 심화버전
+			</p>
+			<!-- < p >
+		<div id="disqus_thread"></div>
+		<script>
+			/**
+			*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+			*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+			/*
+			var disqus_config = function () {
+								this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+							this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+							*/
+							(function () { // DON'T EDIT BELOW THIS LINE
+				var d = document, s = d.createElement('script');
+							s.src = 'https://web-hosting-test.disqus.com/embed.js';
+							s.setAttribute('data-timestamp', +new Date());
+							(d.head || d.body).appendChild(s);
+			})();
+						</script태그를>
+						<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+							powered by
+							Disqus.</a></noscript>
+
+				</p > -->
+		</div>
+	</div>
 </body>
 
 </html>
